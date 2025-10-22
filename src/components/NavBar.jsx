@@ -1,7 +1,7 @@
 import React from 'react'
 import { PiFinnTheHumanFill } from 'react-icons/pi'
 import { TbHorseToy } from 'react-icons/tb'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 
 const NavBar = () => {
     return (
@@ -34,7 +34,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className='mr-3 bg-gray-300 p-1 rounded-full'><PiFinnTheHumanFill size={35}/></div>
-                    <a className="btn btn-accent text-white">Login</a>
+                    <Link to="./login"><a className="btn btn-accent text-white">Login</a></Link>
                 </div>
             </div>
         </div>
