@@ -3,9 +3,30 @@ import { PiFinnTheHumanFill } from 'react-icons/pi'
 import { TbHorseToy } from 'react-icons/tb'
 import { Link, NavLink } from 'react-router'
 import { AuthContext } from '../provider/AuthProvider'
+import Swal from 'sweetalert2'
 
 const NavBar = () => {
-    const {user} = use(AuthContext)
+    const { user, logOut } = use(AuthContext)
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    title: "Logged Out!",
+                    text: "You have been logged out succesfully.",
+                    icon: "success"
+                });
+            })
+            .catch((error) => {
+                const errorMessage = error.message
+
+                Swal.fire({
+                    title: "Error!",
+                    text: errorMessage,
+                    icon: "error"
+                });
+            });
+    }
     return (
         <div>
             <div className="navbar bg-base-300 shadow-sm px-5 md:px-14">
@@ -17,27 +38,28 @@ const NavBar = () => {
                         <ul
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
-                            <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
-                            <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
-                            
+                            <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/">Home</NavLink></li>
+                            <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/myProfile">My Profile</NavLink></li>
+                            <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/allToys">Toys</NavLink></li>
+
                         </ul>
                     </div>
-                    
-                    <a className="text-xl md:text-3xl font-extrabold text-secondary flex items-center"><TbHorseToy className='mr-2'/> FunVille <span className='text-primary'>Toys</span></a>
+
+                    <a className="text-xl md:text-3xl font-extrabold text-secondary flex items-center"><TbHorseToy className='mr-2' /> FunVille <span className='text-primary'>Toys</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal gap-3 px-1">
-                        <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
-                        <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
-                        <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
-                        
+                        <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/">Home</NavLink></li>
+                        <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/myProfile">My Profile</NavLink></li>
+                        <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/allToys">Toys</NavLink></li>
+
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <div className='mr-3 hidden md:block'>{use && user?.email}</div>
-                    <div className='mr-3 bg-gray-300 p-1 rounded-full'><PiFinnTheHumanFill size={35}/></div>
-                    <Link className="btn btn-accent text-white" to="./login">Login</Link>
+                    <div className='mr-3 bg-gray-300 p-1 rounded-full'><PiFinnTheHumanFill size={35} /></div>
+                    {user ? <button onClick={handleLogout} className="btn btn-accent text-white">Logout</button> : <Link className="btn btn-accent text-white" to="./login">Login</Link>}
+
                 </div>
             </div>
         </div>

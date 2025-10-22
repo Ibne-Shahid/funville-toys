@@ -1,18 +1,54 @@
-import React from 'react'
+import React, { use } from 'react'
 import { Link } from 'react-router'
+import { AuthContext } from '../provider/AuthProvider'
+import Swal from 'sweetalert2'
 
 const Login = () => {
+
+    const { signIn } = use(AuthContext)
+
+    const handleSignIn = (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signIn(email, password)
+            .then((result) => {
+
+                const user = result.user;
+                form.reset()
+
+                Swal.fire({
+                    title: "Login Successful!",
+                    text: `Welcome Back!`,
+                    icon: "success"
+                });
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                Swal.fire({
+                    title: 'Ooppss!',
+                    text: errorMessage,
+                    icon: 'error'
+                });
+            });
+    }
+
     return (
         <div className='flex justify-center py-20'>
             <div className='fieldset bg-base-300 border-base-300 rounded-box w-xs border p-4'>
-                <form>
+                <form onSubmit={handleSignIn}>
                     <h1 className='text-2xl font-bold text-center mb-5'>Login Your Accout</h1>
-                    
+
                     <label className="label">Email Adress</label>
-                    <input type="email" className="input" placeholder="Email" />
+                    <input type="email" name="email" className="input" placeholder="Email" />
 
                     <label className="label">Password</label>
-                    <input type="password" className="input" placeholder="Password" />
+                    <input type="password" name="password" className="input" placeholder="Password" />
 
                     <a>Forgot Password?</a>
                     <button className="btn btn-accent w-full text-white mt-3">Login</button>

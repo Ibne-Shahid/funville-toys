@@ -1,6 +1,7 @@
 import React, { use } from 'react'
 import { Link } from 'react-router'
 import { AuthContext } from '../provider/AuthProvider'
+import Swal from 'sweetalert2'
 
 
 const Register = () => {
@@ -15,16 +16,49 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        if (!/(?=.*[A-Z])/.test(password)) {
+            Swal.fire({
+                title: 'Weak Password',
+                text: 'Password must contain at least one uppercase letter.',
+                icon: 'error'
+            });
+            return
+        } else if (!/(?=.*[a-z])/.test(password)) {
+            Swal.fire({
+                title: 'Weak Password',
+                text: 'Password must contain at least one lowercase letter.',
+                icon: 'error'
+            });
+            return
+        } else if (password.length < 6) {
+            Swal.fire({
+                title: 'Too Short',
+                text: 'Password must be atleast 6 characters long.',
+                icon: 'error'
+            });
+            return
+        }
+
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
                 setUser(user)
+                form.reset()
 
+                Swal.fire({
+                    title: "Registration Successful!",
+                    text: `Welcome ${name}!`,
+                    icon: "success"
+                });
             })
             .catch((error) => {
-                const errorCode = error.code;
                 const errorMessage = error.message;
-                // ..
+
+                Swal.fire({
+                    title: 'Ooppss!',
+                    text: errorMessage,
+                    icon: 'error'
+                });
             });
 
 
