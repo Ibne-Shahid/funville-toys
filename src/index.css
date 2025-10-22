@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
@@ -8,4 +9,7 @@
   --color-base-200: #ffdd56;
   --color-base-300: #f4f4f4;
   --color-accent: #58d68d;
+}
+*{
+  font-family: "Inter", sans-serif;
 }
