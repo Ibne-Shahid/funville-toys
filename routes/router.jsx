@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Home from "../pages/Home";
 import Root from "../root-layout/Root";
 import Profile from "../pages/Profile";
-import Favorites from "../pages/Favorites";
+import AllToys from "../pages/AllToys";
+
 
 
 const router = createBrowserRouter([
@@ -20,8 +21,8 @@ const router = createBrowserRouter([
                 element: <Profile></Profile>,
             },
             {
-                path: '/favourites',
-                element: <Favorites></Favorites>,
+                path: '/allToys',
+                element: <AllToys></AllToys>,
             },
         ]
     }

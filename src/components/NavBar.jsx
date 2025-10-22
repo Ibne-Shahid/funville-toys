@@ -1,4 +1,5 @@
 import React from 'react'
+import { PiFinnTheHumanFill } from 'react-icons/pi'
 import { TbHorseToy } from 'react-icons/tb'
 import { NavLink } from 'react-router'
 
@@ -16,7 +17,7 @@ const NavBar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
-                            <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/favourites">Favourites</NavLink></li>
+                            <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
                         </ul>
                     </div>
                     
@@ -26,11 +27,12 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal gap-3 px-1">
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
-                        <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/favourites">Favourites</NavLink></li>
+                        <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn btn-accent text-white">Button</a>
+                    <div className='mr-3 bg-gray-300 p-1 rounded-full'><PiFinnTheHumanFill size={35}/></div>
+                    <a className="btn btn-accent text-white">Login</a>
                 </div>
             </div>
         </div>

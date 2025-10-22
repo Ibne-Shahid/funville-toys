@@ -1,9 +1,11 @@
-import React from 'react'
+
 import NavBar from '../src/components/NavBar'
 import { Outlet } from 'react-router'
 import Footer from '../src/components/Footer'
 
+
 const Root = () => {
+
   return (
     <div>
         <NavBar></NavBar>
