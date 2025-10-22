@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { use } from 'react'
 import { PiFinnTheHumanFill } from 'react-icons/pi'
 import { TbHorseToy } from 'react-icons/tb'
 import { Link, NavLink } from 'react-router'
+import { AuthContext } from '../provider/AuthProvider'
 
 const NavBar = () => {
+    const {user} = use(AuthContext)
     return (
         <div>
             <div className="navbar bg-base-300 shadow-sm px-5 md:px-14">
@@ -18,7 +20,7 @@ const NavBar = () => {
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
-                            <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/cart">My Cart</NavLink></li>
+                            
                         </ul>
                     </div>
                     
@@ -29,12 +31,13 @@ const NavBar = () => {
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
-                        <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/cart">My Cart</NavLink></li>
+                        
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <div className='mr-3 hidden md:block'>{use && user?.email}</div>
                     <div className='mr-3 bg-gray-300 p-1 rounded-full'><PiFinnTheHumanFill size={35}/></div>
-                    <Link to="./login"><a className="btn btn-accent text-white">Login</a></Link>
+                    <Link className="btn btn-accent text-white" to="./login">Login</Link>
                 </div>
             </div>
         </div>

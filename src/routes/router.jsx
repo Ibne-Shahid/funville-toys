@@ -4,7 +4,6 @@ import Root from "../root-layout/Root";
 import Profile from "../pages/Profile";
 import AllToys from "../pages/AllToys";
 import ToyDetails from "../pages/ToyDetails";
-import Cart from "../pages/Cart";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { createBrowserRouter } from "react-router";
@@ -28,10 +27,6 @@ const router = createBrowserRouter([
             {
                 path: '/allToys',
                 element: <AllToys></AllToys>,
-            },
-            {
-                path: '/cart',
-                element: <Cart></Cart>,
             },
             {
                 path: '/toyDetails/:id',
