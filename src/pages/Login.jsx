@@ -1,17 +1,21 @@
 import React, { use } from 'react'
-import { Link } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../provider/AuthProvider'
 import Swal from 'sweetalert2'
 
 const Login = () => {
 
     const { signIn } = use(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleSignIn = (e) => {
         e.preventDefault()
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+
+
 
         signIn(email, password)
             .then((result) => {
@@ -24,6 +28,8 @@ const Login = () => {
                     text: `Welcome Back!`,
                     icon: "success"
                 });
+
+                navigate(`${location.state? location.state: "/"}`)
 
             })
             .catch((error) => {

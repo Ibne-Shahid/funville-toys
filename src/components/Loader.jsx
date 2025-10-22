@@ -2,7 +2,7 @@ import React from 'react'
 
 const Loader = () => {
   return (
-    <div className='flex justify-center pt-10'>
+    <div className='flex justify-center py-10'>
         <progress className="progress w-56"></progress>
     </div>
   )
