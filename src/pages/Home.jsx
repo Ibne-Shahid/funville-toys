@@ -12,6 +12,9 @@ import Loader from '../components/Loader';
 import PTW from '../components/PTW';
 import { Link } from 'react-router';
 import useFetchData from '../hooks/useFetchData';
+import { Helmet } from 'react-helmet';
+
+
 
 const Home = () => {
 
@@ -34,6 +37,9 @@ const Home = () => {
 
     return (
         <div className='mb-10'>
+
+            <title>Home | FunVille Toys</title>
+
             <Hero></Hero>
             {loading ? <Loader></Loader> : <div className='my-20'>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">

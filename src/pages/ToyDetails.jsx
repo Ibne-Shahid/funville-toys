@@ -22,12 +22,15 @@ const ToyDetails = () => {
             text: "You've applied to try this toy.",
             icon: "success"
         });
+
+        e.target.reset()
     }
 
     if (loading) return <Loader></Loader>
 
     return (
         <div className='py-10 w-11/12 mx-auto'>
+            <title>Toy Details | FunVille Toys</title>
             <div className='flex flex-col md:flex-row gap-5'>
                 <img className='w-52 h-52' src={toy?.pictureURL} alt="" />
                 <div>

@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import { createBrowserRouter } from "react-router";
 import PrivateRoute from "../provider/PrivateRoute";
 import Error from "../pages/Error";
+import ForYou from "../pages/ForYou";
 
 
 
@@ -51,10 +52,18 @@ const router = createBrowserRouter([
                 element: <Register></Register>,
             },
             {
-                path:'/*',
-                element: <Error></Error>
-            }
+                path: '/forYou',
+                element: (
+                    <PrivateRoute>
+                        <ForYou></ForYou>
+                    </PrivateRoute>
+                )
+            },
         ]
+    },
+    {
+        path: '/*',
+        element: <Error></Error>
     }
 ])
 
