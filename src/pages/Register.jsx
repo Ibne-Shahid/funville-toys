@@ -1,13 +1,22 @@
-import React, { use } from 'react'
+import React, { use, useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { AuthContext } from '../provider/AuthProvider'
 import Swal from 'sweetalert2'
+import { FaEye } from 'react-icons/fa'
+import { FaEyeSlash } from 'react-icons/fa'
 
 
 const Register = () => {
 
+    const [showPassword, setShowPassword] = useState(false)
     const { createUser, setUser, updateUser, signInWithGoogle } = use(AuthContext)
     const navigate = useNavigate()
+
+    const togglePassword = (e)=>{
+        e.preventDefault()
+        setShowPassword(!showPassword)
+    }
+     
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -94,6 +103,7 @@ const Register = () => {
             });
     }
 
+    
     return (
         <div>
             <title>Register | FunVille Toys</title>
@@ -112,7 +122,10 @@ const Register = () => {
                         <input type="email" name="email" className="input" placeholder="Email" required />
 
                         <label className="label">Password</label>
-                        <input type="password" name="password" className="input" placeholder="Password" required />
+                        <div className='relative'>
+                            <input type={!showPassword? "password" : "text"} name="password" className="input" placeholder="Password" required />
+                            <button onClick={togglePassword} className='btn btn-xs bg-gray-200 border-0 absolute top-2 right-2'>{!showPassword? <FaEye /> : <FaEyeSlash />}</button>
+                        </div>
 
                         <button type="submit" className="btn btn-accent w-full text-white mt-3">Register</button>
                         <p className='font-bold text-center'>Or</p>
