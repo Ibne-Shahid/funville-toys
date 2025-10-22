@@ -18,6 +18,7 @@ const NavBar = () => {
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
                             <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
+                            <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/cart">My Cart</NavLink></li>
                         </ul>
                     </div>
                     
@@ -28,6 +29,7 @@ const NavBar = () => {
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/">Home</NavLink></li>
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/myProfile">My Profile</NavLink></li>
                         <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/allToys">Toys</NavLink></li>
+                        <li className='font-semibold'><NavLink className={({isActive})=>isActive?"bg-black text-white": ""} to="/cart">My Cart</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

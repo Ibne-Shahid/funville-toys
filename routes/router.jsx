@@ -4,6 +4,7 @@ import Root from "../root-layout/Root";
 import Profile from "../pages/Profile";
 import AllToys from "../pages/AllToys";
 import ToyDetails from "../pages/ToyDetails";
+import Cart from "../pages/Cart";
 
 
 
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
                 element: <AllToys></AllToys>,
             },
             {
-                path: '/toyDetails',
+                path: '/cart',
+                element: <Cart></Cart>,
+            },
+            {
+                path: '/toyDetails/:id',
                 element: <ToyDetails></ToyDetails>,
             },
 

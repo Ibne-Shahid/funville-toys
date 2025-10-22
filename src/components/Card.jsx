@@ -16,7 +16,7 @@ const Card = ({toy}) => {
                     <p className='text-xs md:text-sm font-semibold bg-accent p-1 rounded-2xl text-green-900'>Price:- {toy?.price} $</p>
                     
                 </div>
-                <div className='text-center'><Link to="/toyDetails"><button className='btn btn-secondary text-center w-full mt-3'>View More</button></Link></div>
+                <div className='text-center'><Link to={`/toyDetails/${toy.toyId}`}><button className='btn btn-secondary text-center w-full mt-3'>View More</button></Link></div>
 
             </div>
         </div>

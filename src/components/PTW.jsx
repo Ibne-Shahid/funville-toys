@@ -4,7 +4,7 @@ const PTW = () => {
     return (
         <div>
             <h1 className='text-center text-3xl md:text-5xl mt-10 font-bold'>Play To Win</h1>
-            <div className='flex flex-col md:flex-row items-center mt-10 bg-gradient-to-r from-[#632ee3] to-[#9f62f2] px-14 py-10'>
+            <div className='flex flex-col md:flex-row items-center mt-10 bg-gradient-to-r from-amber-400 to-amber-600 px-14 py-10'>
                 <div className='grid grid-cols-3 w-full md:w-1/2'>
                     <img src="https://img.icons8.com/?size=100&id=nkj0lT40HdhC&format=png&color=000000" alt="" />
                     <img src="https://img.icons8.com/?size=100&id=jJBhufA2uedC&format=png&color=000000" alt="" />

@@ -51,7 +51,7 @@ const Home = () => {
             {!loading && (
                 <><h1 className='text-center text-3xl md:text-5xl mt-10 font-bold'>Popular Toys</h1>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-5 mt-10'>
-                        {popularToys.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
+                        {popularToys?.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
                     </div>
                     <div className='text-center mt-5'><Link to="/allToys"><button className='btn btn-accent text-white px-20'>See All</button></Link></div>
                     </>
@@ -65,7 +65,7 @@ const Home = () => {
             <h1 className='text-center text-3xl md:text-5xl mt-10 font-bold'>This Week's Top Selling</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-flow-col gap-5 w-11/12 mx-auto mt-10'>
-                {mostSellingToys.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
+                {mostSellingToys?.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
             </div>
 
 
