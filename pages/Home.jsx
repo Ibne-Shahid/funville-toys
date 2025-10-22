@@ -11,6 +11,7 @@ import Card from '../src/components/Card';
 import Loader from '../src/components/Loader';
 import useFetchData from '../hooks/useFetchData';
 import PTW from '../src/components/PTW';
+import { Link } from 'react-router';
 
 const Home = () => {
 
@@ -32,7 +33,7 @@ const Home = () => {
 
 
     return (
-        <div className='mb-20'>
+        <div className='mb-10'>
             <Hero></Hero>
             {loading ? <Loader></Loader> : <div className='my-20'>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -49,10 +50,10 @@ const Home = () => {
             </div>}
             {!loading && (
                 <><h1 className='text-center text-3xl md:text-5xl mt-10 font-bold'>Popular Toys</h1>
-                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-11/12 mx-auto gap-5 mt-10'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-5 mt-10'>
                         {popularToys.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
                     </div>
-                    <div className='text-center mt-5'><button className='btn btn-accent text-white px-20'>See All</button></div>
+                    <div className='text-center mt-5'><Link to="/allToys"><button className='btn btn-accent text-white px-20'>See All</button></Link></div>
                     </>
                     
             )}
@@ -63,7 +64,7 @@ const Home = () => {
 
             <h1 className='text-center text-3xl md:text-5xl mt-10 font-bold'>This Week's Top Selling</h1>
 
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-flow-col gap-5 w-11/12 mx-auto mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-flow-col gap-5 w-11/12 mx-auto mt-10'>
                 {mostSellingToys.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
             </div>
 

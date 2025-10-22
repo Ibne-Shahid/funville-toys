@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
+import { Link } from 'react-router'
 
 const Slide = ({ slideOne }) => {
     return (
@@ -22,7 +23,8 @@ const Slide = ({ slideOne }) => {
                             </div>
                             <p className='bg-blue-300 py-1 px-2 inline-block rounded-xl font-semibold text-blue-600'>Price: {slideOne?.price} $</p>
                         </div>
-                        <button className="btn btn-accent text-white mt-3">See Details</button>
+                        
+                        <Link to="/toyDetails"><button className="btn btn-accent text-white mt-3">See Details</button></Link>
                     </div>
                 </div>
             </div>

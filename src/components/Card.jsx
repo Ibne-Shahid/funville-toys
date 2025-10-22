@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const Card = ({toy}) => {
     return (
@@ -10,11 +11,12 @@ const Card = ({toy}) => {
                 <div className='mt-5 bg-gray-400 rounded-2xl'>
                     <p className='flex justify-center items-center gap-2'>Rating:- {toy?.rating} <FaStar /></p>
                 </div>
-                <div className='text-center mt-3'>
-                    <p>Available:- {toy?.availableQuantity}</p>
-                    <p>Price:- {toy?.price} $</p>
-                    <button className='btn btn-secondary text-center w-full mt-3'>View More</button>
+                <div className='mt-3 flex justify-between items-center'>
+                    <p className='text-xs md:text-sm font-semibold bg-primary p-1 rounded-2xl text-orange-900'>Available:- {toy?.availableQuantity}</p>
+                    <p className='text-xs md:text-sm font-semibold bg-accent p-1 rounded-2xl text-green-900'>Price:- {toy?.price} $</p>
+                    
                 </div>
+                <div className='text-center'><Link to="/toyDetails"><button className='btn btn-secondary text-center w-full mt-3'>View More</button></Link></div>
 
             </div>
         </div>
