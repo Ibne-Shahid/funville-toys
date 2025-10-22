@@ -4,9 +4,10 @@ import { TbHorseToy } from 'react-icons/tb'
 import { Link, NavLink } from 'react-router'
 import { AuthContext } from '../provider/AuthProvider'
 import Swal from 'sweetalert2'
+import Spinner from './Spinner'
 
 const NavBar = () => {
-    const { user, logOut } = use(AuthContext)
+    const { user, logOut, loading } = use(AuthContext)
 
     const handleLogout = () => {
         logOut()
@@ -57,7 +58,11 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className='mr-3 hidden md:block'>{use && user?.email}</div>
-                    <div className='mr-3 bg-gray-300 p-1 rounded-full'><PiFinnTheHumanFill size={35} /></div>
+                    <div className='mr-3 bg-gray-300 p-1 rounded-full relative group'>{loading ? <Spinner></Spinner> : user ? (<><img className='w-10 rounded-full' src={user?.photoURL} alt="" />
+                        <span className='absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity'>
+                            {user?.displayName || "No Name"}
+                        </span>
+                    </>) : <PiFinnTheHumanFill size={35} />}</div>
                     {user ? <button onClick={handleLogout} className="btn btn-accent text-white">Logout</button> : <Link className="btn btn-accent text-white" to="./login">Login</Link>}
 
                 </div>

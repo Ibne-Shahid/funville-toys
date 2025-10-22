@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { createBrowserRouter } from "react-router";
 import PrivateRoute from "../provider/PrivateRoute";
+import Error from "../pages/Error";
 
 
 
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myProfile',
-                element: <Profile></Profile>,
+                element: (
+                    <PrivateRoute>
+                        <Profile></Profile>
+                    </PrivateRoute>
+                )
             },
             {
                 path: '/allToys',
@@ -45,7 +50,10 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>,
             },
-
+            {
+                path:'/*',
+                element: <Error></Error>
+            }
         ]
     }
 ])
