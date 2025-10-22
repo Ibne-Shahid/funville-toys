@@ -7,6 +7,7 @@ import ToyDetails from "../pages/ToyDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { createBrowserRouter } from "react-router";
+import PrivateRoute from "../provider/PrivateRoute";
 
 
 
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/toyDetails/:id',
-                element: <ToyDetails></ToyDetails>,
+                element: (
+                    <PrivateRoute>
+                        <ToyDetails></ToyDetails>
+                    </PrivateRoute>
+                )
             },
             {
                 path: '/login',
