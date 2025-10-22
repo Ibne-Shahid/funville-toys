@@ -1,5 +1,4 @@
 import React from 'react'
-import logoIcon from '../assets/FUNVILLE-logo.png'
 
 const Footer = () => {
   return (

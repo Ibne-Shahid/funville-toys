@@ -1,9 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import useFetchData from '../hooks/useFetchData'
+
 import { FaStar, FaStarHalf } from 'react-icons/fa'
 import { BiCartAdd } from 'react-icons/bi'
 import Swal from 'sweetalert2'
+import useFetchData from '../hooks/useFetchData'
 
 const ToyDetails = () => {
     const { id } = useParams()

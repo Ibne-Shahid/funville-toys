@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+
 import Home from "../pages/Home";
 import Root from "../root-layout/Root";
 import Profile from "../pages/Profile";
@@ -7,6 +7,7 @@ import ToyDetails from "../pages/ToyDetails";
 import Cart from "../pages/Cart";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import { createBrowserRouter } from "react-router";
 
 
 

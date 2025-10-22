@@ -1,7 +1,8 @@
 import React from 'react'
+
+import Loader from '../components/Loader'
+import Card from '../components/Card'
 import useFetchData from '../hooks/useFetchData'
-import Loader from '../src/components/Loader'
-import Card from '../src/components/Card'
 
 const AllToys = () => {
 

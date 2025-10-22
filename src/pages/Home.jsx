@@ -3,15 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import Hero from '../src/components/Hero';
-import Slide from '../src/components/Slide';
-import Slide2 from '../src/components/Slide2';
-import Slide3 from '../src/components/Slide3';
-import Card from '../src/components/Card';
-import Loader from '../src/components/Loader';
-import useFetchData from '../hooks/useFetchData';
-import PTW from '../src/components/PTW';
+import Hero from '../components/Hero';
+import Slide from '../components/Slide';
+import Slide2 from '../components/Slide2';
+import Slide3 from '../components/Slide3';
+import Card from '../components/Card';
+import Loader from '../components/Loader';
+import PTW from '../components/PTW';
 import { Link } from 'react-router';
+import useFetchData from '../hooks/useFetchData';
 
 const Home = () => {
 
