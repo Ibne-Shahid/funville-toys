@@ -55,7 +55,7 @@ const ForgetPass = () => {
     return (
         <div className='flex justify-center py-20'>
 
-            <title>login | FunVille Toys</title>
+            <title>Reset Password | FunVille Toys</title>
 
             <div className='fieldset bg-base-300 border-base-300 rounded-box w-xs border p-4'>
                 <form onSubmit={handleResetPassword}>
