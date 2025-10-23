@@ -3,6 +3,7 @@ import React from 'react'
 const Terms = () => {
     return (
         <div>
+            <title>Terms & Conditions | FunVille Toys</title>
             <div className='bg-gradient-to-r from-sky-700 to-sky-400'>
                 <h1 className='text-3xl md:text-5xl font-bold text-white px-14 py-5'>Terms & Conditions</h1>
             </div>
@@ -47,9 +48,9 @@ const Terms = () => {
                     </div>
                     <div>
                         <h3 className='text-xl font-semibold'>6. Returns and Refunds</h3>
-                        <p>If you receive a defective or incorrect item, please contact us within 7 days of delivery.
-                            Products must be unused, in original packaging, and eligible for return.</p>
-                            <p>For detailed information, please visit our Return Policy page</p>
+                        <p>If you receive a defective or incorrect item, please contact us within 7 days of delivery.</p>
+                        <p>Products must be unused, in original packaging, and eligible for return.</p>
+                        <p>For detailed information, please visit our Return Policy page</p>
                     </div>
                     <div>
                         <h3 className='text-xl font-semibold'>7. Intellectual Property</h3>

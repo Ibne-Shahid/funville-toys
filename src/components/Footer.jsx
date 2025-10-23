@@ -9,11 +9,11 @@ const Footer = () => {
         <nav className="grid grid-flow-col gap-4">
           <Link to="/aboutUs"><a className="link link-hover">About us</a></Link>
           <Link to="/terms"><a className="link link-hover">Terms and conditions</a></Link>
-          <a className="link link-hover">privacy policy</a>
+          <Link to="/privacyPolicy"><a className="link link-hover">privacy policy</a></Link>
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">
-            <a className="link link-hover text-sky-500 hover:text-sky-600">
+            <a href='https://x.com/AnasBinShahid17' target="_blank" className="link link-hover text-sky-500 hover:text-sky-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -25,7 +25,7 @@ const Footer = () => {
               </svg>
             </a>
 
-            <a className="link link-hover text-pink-500 hover:text-pink-600">
+            <a href='https://www.instagram.com/ibne.shahid17/' target="_blank" className="link link-hover text-pink-500 hover:text-pink-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -38,7 +38,7 @@ const Footer = () => {
             </a>
 
 
-            <a className="link link-hover text-blue-600 hover:text-blue-700">
+            <a href='https://web.facebook.com/anas.bin.shahid.168960' target="_blank" className="link link-hover text-blue-600 hover:text-blue-700">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

@@ -12,6 +12,7 @@ import Error from "../pages/Error";
 import ForYou from "../pages/ForYou";
 import AboutUs from "../pages/AboutUs";
 import Terms from "../pages/Terms";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 
 
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
                 path: '/terms',
                 element: <Terms></Terms>
             },
+            {
+                path: '/privacyPolicy',
+                element: <PrivacyPolicy></PrivacyPolicy>
+            }
         ]
     },
     {
