@@ -13,6 +13,7 @@ import ForYou from "../pages/ForYou";
 import AboutUs from "../pages/AboutUs";
 import Terms from "../pages/Terms";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import ForgetPass from "../pages/ForgetPass";
 
 
 
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
             {
                 path: '/privacyPolicy',
                 element: <PrivacyPolicy></PrivacyPolicy>
+            },
+            {
+                path: '/forgetPassword',
+                element: <ForgetPass></ForgetPass>
             }
         ]
     },

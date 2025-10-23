@@ -35,7 +35,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
 
-    const sentPasswordResetEmail = (email)=>{
+    const getPasswordResetEmail = (email)=>{
         return sendPasswordResetEmail(auth,email)
     }
 
@@ -60,7 +60,7 @@ const AuthProvider = ({children}) => {
         setLoading,
         updateUser,
         signInWithGoogle,
-        sentPasswordResetEmail
+        getPasswordResetEmail
     }
 
   return <AuthContext value={authData}>{children}</AuthContext>

@@ -11,7 +11,7 @@ import { FaEyeSlash } from 'react-icons/fa'
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false)
-    const { signIn, signInWithGoogle, setUser, sentPasswordResetEmail } = use(AuthContext)
+    const { signIn, signInWithGoogle, setUser } = use(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
     const emailRef = useRef()
@@ -78,25 +78,12 @@ const Login = () => {
         setShowPassword(!showPassword)
     }
 
-    const handleForgotPass = () => {
+    const handleForgotPass = (e) => {
+        e.preventDefault()
 
         const email = emailRef.current.value
 
-        sentPasswordResetEmail(email)
-            .then(() => {
-                Swal.fire({
-                    title: "Succes!",
-                    text: "Password reset email sent successfully",
-                    icon: "success"
-                });
-            })
-            .catch((error) => {
-                Swal.fire({
-                    title: "Something went wrong!",
-                    text: error.message,
-                    icon: "error"
-                });
-            })
+        navigate("/forgetPassword", {state: {email}})
 
     }
 
