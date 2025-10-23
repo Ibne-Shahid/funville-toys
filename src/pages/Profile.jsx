@@ -1,29 +1,38 @@
 import React, { use } from 'react'
 import { AuthContext } from '../provider/AuthProvider'
 import { format } from 'date-fns'
+import Swal from 'sweetalert2'
 
 const Profile = () => {
 
   const { user, updateUser, setUser } = use(AuthContext)
 
-  const handleUpdate = (e)=>{
-      e.preventDefault()
+  const handleUpdate = (e) => {
+    e.preventDefault()
 
-      const form = e.target;
-      const name = form.name.value;
-      const photo = form.photo.value;
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
 
-      const updatedName = name || user?.displayName;
-      const updaterPhoto = photo || user?.photoURL;
+    const updatedName = name || user?.displayName;
+    const updaterPhoto = photo || user?.photoURL;
 
-      updateUser({displayName: updatedName, photoURL: updaterPhoto})
-      .then(()=>{
-        setUser({...user, displayName: updatedName, photoURL: updaterPhoto})
+    updateUser({ displayName: updatedName, photoURL: updaterPhoto })
+      .then(() => {
+        setUser({ ...user, displayName: updatedName, photoURL: updaterPhoto })
         form.reset()
+        Swal.fire({
+          title: "Done",
+          text: `You've updated your profile.`,
+          icon: "success"
+        });
       })
-      .catch((error)=>{
-        console.log(error);
-        
+      .catch((error) => {
+        Swal.fire({
+          title: 'Ooppss!',
+          text: errorMessage,
+          icon: 'error'
+        });
       })
   }
 
@@ -47,18 +56,18 @@ const Profile = () => {
           <h1 className='text-center text-2xl md:text-4xl mt-10 font-bold mb-5'>Edit Your Profile</h1>
           <form onSubmit={handleUpdate} className='flex flex-col'>
             <label className="input">
-              
+
               <input
                 type="text"
                 placeholder="Name"
                 name="name"
-                
+
               />
             </label><br />
 
             <label className="input">
-              
-              <input name="photo" type="text" placeholder="Photo URL"/>
+
+              <input name="photo" type="text" placeholder="Photo URL" />
             </label>
 
             <button className='btn btn-accent text-white mt-5'>Save Changes</button>
