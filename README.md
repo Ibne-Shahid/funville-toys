@@ -16,14 +16,14 @@ The purpose of **FunVille Toys** is to provide a seamless platform where users c
 
 ## Key Features
 
-**User Authentication** - Email/password and Google Sign-in via Firebase Authentication.
-**Private Routes** - Certain pages are only accesible to logged-in users.
-**Dynamic Toy Listing** - Displays toy data fetched from a server using custom hooks.
-**Toy Details Page** - Showcases toy-specific info such as image, price, rating, and seller info.
-**Responsive Design** - Fully mobile-friendly UI using Tailwind CSS and DaisyUI.
-**Sweet Alerts** - Beautiful notifications for succesful and unsuccesful actions.
-**Error Handling & Loader** - Custom error and loading components for a better UX.
-**Date Formatting** - Uses 'date-fns' for clean date display.
+1. **User Authentication** - Email/password and Google Sign-in via Firebase Authentication.
+2. **Private Routes** - Certain pages are only accesible to logged-in users.
+3. **Dynamic Toy Listing** - Displays toy data fetched from a server using custom hooks.
+4. **Toy Details Page** - Showcases toy-specific info such as image, price, rating, and seller info.
+5. **Responsive Design** - Fully mobile-friendly UI using Tailwind CSS and DaisyUI.
+6. **Sweet Alerts** - Beautiful notifications for succesful and unsuccesful actions.
+7. **Error Handling & Loader** - Custom error and loading components for a better UX.
+8. **Date Formatting** - Uses 'date-fns' for clean date display.
 
 ## NPM Packages Used
 
