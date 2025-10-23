@@ -10,6 +10,7 @@ import { createBrowserRouter } from "react-router";
 import PrivateRoute from "../provider/PrivateRoute";
 import Error from "../pages/Error";
 import ForYou from "../pages/ForYou";
+import AboutUs from "../pages/AboutUs";
 
 
 
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 )
             },
+            {
+                path: '/aboutUs',
+                element: <AboutUs></AboutUs>
+            }
         ]
     },
     {
