@@ -50,11 +50,13 @@ const Profile = () => {
         <p className='font-semibold'>Welcome, {user?.displayName}</p>
         <p>{format(new Date(), "EE, dd LLLL uuuu")}</p>
         <div className='h-20 bg-gradient-to-r from-blue-200 to-orange-200 rounded-t-2xl mt-5'></div>
-        <div className='mt-5 flex gap-3 items-center relative group'>
-          <img className='rounded-full' src={user?.photoURL} alt="" />
-          <span className='absolute -bottom-8 left-0 bg-gray-800 text-white text-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity'>
-            {user?.photoURL || "No Photo"}
-          </span>
+        <div className='mt-5 flex gap-3 items-center'>
+          <div className='relative group'>
+            <img className='rounded-full' src={user?.photoURL} alt="" />
+            <span className='absolute -bottom-8 left-0 bg-gray-800 text-white text-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity'>
+              {user?.photoURL || "No Photo"}
+            </span>
+          </div>
           <div>
             <p className='font-bold'>{user?.displayName}</p>
             <p className='text-gray-400'>{user?.email}</p>
