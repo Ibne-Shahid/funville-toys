@@ -11,6 +11,7 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Error from "../pages/Error";
 import ForYou from "../pages/ForYou";
 import AboutUs from "../pages/AboutUs";
+import Terms from "../pages/Terms";
 
 
 
@@ -63,7 +64,11 @@ const router = createBrowserRouter([
             {
                 path: '/aboutUs',
                 element: <AboutUs></AboutUs>
-            }
+            },
+            {
+                path: '/terms',
+                element: <Terms></Terms>
+            },
         ]
     },
     {
