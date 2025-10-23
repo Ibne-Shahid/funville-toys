@@ -7,7 +7,7 @@ const Card = ({toy}) => {
         <div>
             <div className='bg-gray-200 py-3 px-5 rounded-lg hover:scale-105 transition ease-in-out flex flex-col justify-between h-full'>
                 <img className='mx-auto' src={toy?.pictureURL} alt="" />
-                <p className='text-center font-semibold mt-3'>{toy?.toyName}</p>
+                <p className='text-center text-sm font-bold mt-3'>{toy?.toyName}</p>
                 <div className='mt-5 bg-gray-400 rounded-2xl'>
                     <p className='flex justify-center items-center gap-2'>Rating:- {toy?.rating} <FaStar /></p>
                 </div>

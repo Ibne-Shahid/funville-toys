@@ -15,7 +15,7 @@ const useFetchData = () => {
             setLoading(false)
         })
         .catch((err) => {
-        setError(err.message);
+        setError(err);
         setLoading(false);
       })
     },[])

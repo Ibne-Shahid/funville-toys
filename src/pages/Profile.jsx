@@ -2,10 +2,14 @@ import React, { use } from 'react'
 import { AuthContext } from '../provider/AuthProvider'
 import { format } from 'date-fns'
 import Swal from 'sweetalert2'
+import Loader from '../components/Loader'
+import PageError from './PageError'
+import useFetchData from '../hooks/useFetchData'
 
 const Profile = () => {
 
   const { user, updateUser, setUser } = use(AuthContext)
+  const {loading, error} = useFetchData()
 
   const handleUpdate = (e) => {
     e.preventDefault()
@@ -35,6 +39,9 @@ const Profile = () => {
         });
       })
   }
+
+  if (loading) return <Loader></Loader>;
+  if (error) return <PageError></PageError>
 
   return (
     <div className='w-11/12 mx-auto'>

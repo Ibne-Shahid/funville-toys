@@ -3,6 +3,7 @@ import useFetchData from '../hooks/useFetchData'
 import Loader from '../components/Loader'
 import Card from '../components/Card'
 import Swal from 'sweetalert2'
+import PageError from './PageError'
 
 const ForYou = () => {
     const { toys, loading, error } = useFetchData()
@@ -21,6 +22,9 @@ const ForYou = () => {
 
         e.target.reset()
     }
+
+    if(loading) return <Loader></Loader>;
+    if(error) return <PageError></PageError>
 
     return (
         <div className='py-10'>

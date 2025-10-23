@@ -6,12 +6,15 @@ import { FaEye } from 'react-icons/fa'
 import { FaEyeSlash } from 'react-icons/fa'
 
 
+
+
 const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false)
     const { createUser, setUser, updateUser, signInWithGoogle } = use(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
+    
 
     const togglePassword = (e)=>{
         e.preventDefault()
@@ -104,6 +107,8 @@ const Register = () => {
                 });
             });
     }
+
+    
 
     
     return (

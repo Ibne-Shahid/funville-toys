@@ -13,6 +13,7 @@ import PTW from '../components/PTW';
 import { Link } from 'react-router';
 import useFetchData from '../hooks/useFetchData';
 import { Helmet } from 'react-helmet';
+import PageError from './PageError';
 
 
 
@@ -33,7 +34,8 @@ const Home = () => {
 
     const mostSellingToys = toysData.filter(toy => toy?.availableQuantity < 60)
 
-
+    if(loading) return <Loader></Loader>;
+    if(error) return <PageError></PageError>
 
     return (
         <div className='mb-10'>

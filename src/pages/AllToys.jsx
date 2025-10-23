@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import Loader from '../components/Loader'
 import Card from '../components/Card'
 import useFetchData from '../hooks/useFetchData'
+import ToyNotFound from './ToyNotFound'
+import PageError from './PageError'
 
 
 
@@ -24,6 +26,9 @@ const AllToys = () => {
         return ()=> clearTimeout(timer)
     },[search, toys])
 
+    if(loading) return <Loader></Loader>;
+    if(error) return <PageError></PageError>
+
     return (
         <div className='mb-10 w-11/12 mx-auto'>
 
@@ -35,7 +40,7 @@ const AllToys = () => {
                 <p className='text-[#001931] font-semibold text-xl mt-3 md:mt-0'>({searchedToys.length}) Toys Available</p>
                 <input value={search} onChange={e => setSearch(e.target.value)} type="search" placeholder="Search Apps" className="input input-md" />
             </div>
-            {loading ? <Loader></Loader> : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-5 mt-10'>
+            {searchLoading ? <Loader></Loader> : searchedToys.length === 0 ? <ToyNotFound></ToyNotFound> : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-5 mt-10'>
                 {searchedToys.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
             </div>}
         </div>
