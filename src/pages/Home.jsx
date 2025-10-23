@@ -72,7 +72,7 @@ const Home = () => {
 
             <h1 className='text-center text-3xl md:text-5xl mt-10 font-bold'>This Week's Top Selling</h1>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-flow-col gap-5 w-11/12 mx-auto mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-11/12 mx-auto mt-10'>
                 {mostSellingToys?.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
             </div>
 
