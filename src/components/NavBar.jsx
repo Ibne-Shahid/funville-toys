@@ -40,7 +40,7 @@ const NavBar = () => {
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/">Home</NavLink></li>
-                            <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/myProfile">My Profile</NavLink></li>
+                            <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/myProfile">Profile</NavLink></li>
                             <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/allToys">Toys</NavLink></li>
                             <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/forYou">For You</NavLink></li>
 
@@ -52,7 +52,7 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal gap-3 px-1">
                         <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/">Home</NavLink></li>
-                        <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/myProfile">My Profile</NavLink></li>
+                        <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/myProfile">Profile</NavLink></li>
                         <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/allToys">Toys</NavLink></li>
                         <li className='font-semibold'><NavLink className={({ isActive }) => isActive ? "bg-black text-white" : ""} to="/forYou">For You</NavLink></li>
 

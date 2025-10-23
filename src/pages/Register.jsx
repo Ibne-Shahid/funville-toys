@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react'
-import { Link, useNavigate } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../provider/AuthProvider'
 import Swal from 'sweetalert2'
 import { FaEye } from 'react-icons/fa'
@@ -11,6 +11,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
     const { createUser, setUser, updateUser, signInWithGoogle } = use(AuthContext)
     const navigate = useNavigate()
+    const location = useLocation()
 
     const togglePassword = (e)=>{
         e.preventDefault()
@@ -67,7 +68,7 @@ const Register = () => {
                     text: `Welcome ${name}!`,
                     icon: "success"
                 });
-                navigate("/")
+                navigate(`${location.state? location.state : "/"}`);
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -92,7 +93,8 @@ const Register = () => {
                     text: `Welcome ${user.displayName || "User"}!`,
                     icon: "success"
                 });
-                navigate("/");
+                
+                navigate(`${location.state? location.state : "/"}`);
             })
             .catch(error => {
                 Swal.fire({
