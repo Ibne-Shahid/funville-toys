@@ -110,7 +110,7 @@ The purpose of **FunVille Toys** is to create a seamless online toy experience w
 Follow these steps to run **FunVille Toys** locally:
 
 1. **Clone the repository** </br>
-git clone (your-repo-url)
+git clone (your-repo-url) </br>
 cd funville-toys
 
 2. **Install dependencies and start development server** </br>
