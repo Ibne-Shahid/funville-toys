@@ -168,13 +168,13 @@ const NavBar = () => {
                     {user ? (
                         <button
                             onClick={handleLogout}
-                            className="btn btn-accent text-white"
+                            className="btn btn-secondary text-white"
                         >
                             Logout
                         </button>
                     ) : (
                         <Link
-                            className="btn btn-accent text-white"
+                            className="btn btn-secondary text-white"
                             to="/login"
                         >
                             Login

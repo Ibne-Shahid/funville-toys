@@ -1,26 +1,45 @@
-import React from 'react'
-import { FaStar } from 'react-icons/fa';
-import { Link } from 'react-router';
+import React from "react";
+import { FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
-const Card = ({toy}) => {
-    return (
-        <div>
-            <div className='bg-gray-200 py-3 px-5 rounded-lg hover:scale-105 transition ease-in-out flex flex-col justify-between h-full'>
-                <img className='mx-auto' src={toy?.pictureURL} alt="" />
-                <p className='text-center text-sm font-bold mt-3'>{toy?.toyName}</p>
-                <div className='mt-5 bg-gray-400 rounded-2xl'>
-                    <p className='flex justify-center items-center gap-2'>Rating:- {toy?.rating} <FaStar /></p>
-                </div>
-                <div className='mt-3 flex justify-between items-center'>
-                    <p className='text-xs md:text-sm font-semibold bg-primary p-1 rounded-2xl text-orange-900'>Available:- {toy?.availableQuantity}</p>
-                    <p className='text-xs md:text-sm font-semibold bg-accent p-1 rounded-2xl text-green-900'>Price:- {toy?.price} $</p>
-                    
-                </div>
-                <div className='text-center'><Link to={`/toyDetails/${toy.toyId}`}><button className='btn btn-secondary text-center w-full mt-3'>View More</button></Link></div>
+const Card = ({ toy }) => {
+  return (
+    <div className="p-2">
+      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
 
-            </div>
+        <div className="bg-gradient-to-br from-yellow-100 to-orange-100 p-3 flex justify-center">
+          <img
+            src={toy?.pictureURL}
+            alt={toy?.toyName}
+            className="h-32 object-contain"
+          />
         </div>
-    )
-}
 
-export default Card
+        <div className="px-3 py-4 text-center">
+
+          <h3 className="text-sm font-bold text-gray-800 h-10 flex items-center justify-center">
+            {toy?.toyName}
+          </h3>
+
+          <div className="flex justify-center items-center gap-3 mt-2 text-sm">
+            <span className="flex items-center gap-1 text-yellow-600 font-semibold">
+              <FaStar className="text-yellow-500" /> {toy?.rating}
+            </span>
+            <span className="font-bold text-green-700">
+              ${toy?.price}
+            </span>
+          </div>
+
+          <Link to={`/toyDetails/${toy.toyId}`}>
+            <button className="btn btn-primary w-full mt-4 rounded-full btn-sm">
+              View Details
+            </button>
+          </Link>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default Card;

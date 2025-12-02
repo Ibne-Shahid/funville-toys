@@ -13,7 +13,7 @@ const Hero = () => {
             <p className='lg:w-2/3 mt-5'>
                 we bring smiles to every child’s face! Explore a colorful world of creativity, imagination, and endless playtime joy. From classic building sets and action figures to puzzles, dolls, and educational toys — we have something special for every kid (and the kid inside you!).
             </p>
-            <Link to="/allToys"><button className='btn btn-accent mt-5 text-white'>Shop Now</button></Link>
+            <Link to="/allToys"><button className='btn btn-secondary mt-5 text-white'>Shop Now</button></Link>
         </div>
     </div>
   )

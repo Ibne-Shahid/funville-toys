@@ -46,7 +46,7 @@ const TryNow = ({handeSubmit}) => {
                         <input type="email" placeholder="mail@site.com" required />
                     </label>
 
-                    <button className='btn btn-accent text-white mt-5'>Try Now</button>
+                    <button className='btn btn-primary text-white mt-5'>Try Now</button>
 
                 </form>
             </div>

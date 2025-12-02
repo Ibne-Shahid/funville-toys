@@ -14,6 +14,8 @@ import { Link } from 'react-router';
 import useFetchData from '../hooks/useFetchData';
 import { Helmet } from 'react-helmet';
 import PageError from './PageError';
+import CustomerReviews from '../components/CustomeReviews';
+import ParentsBlog from '../components/ParentsBlog';
 
 
 
@@ -75,6 +77,9 @@ const Home = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-11/12 mx-auto mt-10'>
                 {mostSellingToys?.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
             </div>
+
+            <CustomerReviews></CustomerReviews>
+            <ParentsBlog></ParentsBlog>
 
 
 

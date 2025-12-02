@@ -23,7 +23,7 @@ const Slide3 = ({slideThree}) => {
                             </div>
                             <p className='bg-blue-300 py-1 px-2 inline-block rounded-xl font-semibold text-blue-600'>Price: {slideThree?.price} $</p>
                         </div>
-                        <Link to={`/toyDetails/${slideThree?.toyId}`}><button className="btn btn-accent text-white mt-3">See Details</button></Link>
+                        <Link to={`/toyDetails/${slideThree?.toyId}`}><button className="btn btn-primary text-white mt-3">See Details</button></Link>
                     </div>
                 </div>
             </div>
