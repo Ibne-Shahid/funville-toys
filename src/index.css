@@ -5,10 +5,10 @@
   name: "light";
   default: true;
   --color-primary: #ff8c42;
-  --color-secondary: #00a9e0;
+  --color-secondary: #58d68d;
   --color-base-200: #ffdd56;
   --color-base-300: #f4f4f4;
-  --color-accent: #58d68d;
+  --color-accent: #00a9e0;
 }
 *{
   font-family: "Inter", sans-serif;
