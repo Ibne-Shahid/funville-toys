@@ -11,7 +11,7 @@ const Card = ({ toy }) => {
           <img
             src={toy?.pictureURL}
             alt={toy?.toyName}
-            className="h-32 object-contain"
+            className="h-32 object-contain rounded-lg"
           />
         </div>
 

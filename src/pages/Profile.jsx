@@ -56,10 +56,8 @@ const Profile = () => {
         </p>
       </div>
 
-      {/* Profile Card */}
       <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        {/* Left Side – User Info Card */}
         <div className="bg-white/40 backdrop-blur-lg shadow-xl p-6 rounded-2xl border border-white/30">
 
           <div className="flex flex-col items-center">
@@ -80,7 +78,6 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Right Side – Update Form */}
         <form
           onSubmit={handleUpdate}
           className="bg-white/60 backdrop-blur-lg shadow-xl p-6 rounded-2xl border border-white/40 flex flex-col"
