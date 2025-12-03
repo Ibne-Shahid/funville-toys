@@ -4,7 +4,7 @@ const TryNow = ({handeSubmit}) => {
     return (
         <div>
             <div className='mt-10 flex flex-col justify-center items-center w-full'>
-                <h1 className='mb-5 text-2xl font-bold text-center'>Have a Look</h1>
+                <h1 className='mb-5 text-2xl font-bold text-center'>Share Your Review</h1>
                 <form onSubmit={handeSubmit} className='flex flex-col'>
                     <label className="input">
                         <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -22,7 +22,7 @@ const TryNow = ({handeSubmit}) => {
                         <input
                             type="text"
                             required
-                            placeholder="Name"
+                            placeholder="Customer Review"
                             pattern="[A-Za-z][A-Za-z0-9\-]*"
                             minlength="3"
                             maxlength="30"
@@ -46,7 +46,7 @@ const TryNow = ({handeSubmit}) => {
                         <input type="email" placeholder="mail@site.com" required />
                     </label>
 
-                    <button className='btn btn-primary text-white mt-5'>Try Now</button>
+                    <button className='btn btn-primary text-white mt-5'>Submit</button>
 
                 </form>
             </div>
