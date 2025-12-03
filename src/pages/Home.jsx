@@ -63,7 +63,7 @@ const Home = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-5 mt-10'>
                         {popularToys?.map(toy => <Card key={toy.toyId} toy={toy}></Card>)}
                     </div>
-                    <div className='text-center mt-5'><Link to="/allToys"><button className='btn btn-accent text-white px-20'>See All</button></Link></div>
+                    <div className='text-center mt-5'><Link to="/allToys"><button className='btn btn-primary text-white px-20'>See All</button></Link></div>
                     </>
                     
             )}
